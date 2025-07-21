@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import ErrorMessage from './errores/ErrorMessage'
 
 function Login({ setToken }) {
   const [username, setUsername] = useState('');
@@ -13,13 +14,14 @@ function Login({ setToken }) {
     setError('');
     try {
       const res = await axios.post('http://localhost:5000/auth/login', { username, password });
-      setToken(res.data.access_token);
-      
+      setToken(res.data.access_token);      
       localStorage.setItem('token', res.data.access_token)
       localStorage.setItem('usuario', res.data.username)
       navigate('/solicitudes');
     } catch (err) {
-      setError('Credenciales inválidas');
+      console.error('Error al obtener los datos:', err);
+      console.log(err.code)       
+      setError(err);      
     }
   };
 
@@ -54,12 +56,7 @@ function Login({ setToken }) {
         </div>
 
         <button type="submit" className="btn btn-primary w-100">Ingresar</button>
-
-        {error && (
-          <div className="alert alert-danger mt-3" role="alert">
-            {error}
-          </div>
-        )}
+        <ErrorMessage error={error} />
       </form>
     </div>
   );
