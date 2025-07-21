@@ -1,7 +1,7 @@
 # Instalar paquetes
 
 ## comandos
-install npm 
+npm install  
 npm install jwt-decode
 
 # Luego
