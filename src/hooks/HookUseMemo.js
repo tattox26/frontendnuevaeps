@@ -1,6 +1,10 @@
 import { useState,useMemo } from 'react';
-
-function HookPrueba5() {
+/* 
+useMemo 
+Fforma de evitar hacer cálculos innecesarios en tu app.
+Sirve para guardar un resultado que ya se calculó, y volverlo a usar si los datos no han cambiado.
+*/
+function HookUseMemo() {
   const [numero, setNumero] = useState(0);
   const [contador, setContador] = useState(0);
 
@@ -27,4 +31,4 @@ function HookPrueba5() {
 }
 
 
-export default HookPrueba5;
+export default HookUseMemo;

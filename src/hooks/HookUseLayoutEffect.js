@@ -1,6 +1,10 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-
-function HookPrueba7() {
+/*  
+ !! useLayoutEffect !!
+  se ejecuta antes de que el navegador pinte la pantalla, es decir, 
+  justo después del renderizado, pero antes de que el usuario vea los cambios.
+*/
+function HookUseLayoutEffect() {
   const [moduloActivo, setModuloActivo] = useState('Resumen');
   const sidebarRef = useRef(null);
 
@@ -14,14 +18,13 @@ function HookPrueba7() {
   }, [moduloActivo]);
 
   const contenidos = {
-    Resumen: 'Bienvenido al panel de control.',
+    Resumen: 'Bienvenido al panel de control  Uso de useLayoutEffect ',
     Configuración: 'Opciones avanzadas del sistema, seguridad y usuarios.',
     Reportes: 'Estadísticas detalladas, gráficos y registros.',
   };
 
   return (
-    <div style={{ display: 'flex', height: '200px', border: '1px solid #ccc' }}>
-      Uso de useLayoutEffect
+    <div style={{ display: 'flex', height: '200px', border: '1px solid #ccc' }}>     
       <div
         ref={sidebarRef}
         style={{
@@ -45,4 +48,4 @@ function HookPrueba7() {
   );
 }
 
-export default HookPrueba7;
+export default HookUseLayoutEffect;

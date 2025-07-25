@@ -2,15 +2,14 @@ import React, { useEffect, useState, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import HookPrueba1 from '../hooks/HookPrueba1';
-import HookPrueba2 from '../hooks/HookPrueba2';
-import HookPrueba3 from '../hooks/HookPrueba3';
-import HookPrueba4 from '../hooks/HookPrueba4';
-import HookPrueba5 from '../hooks/HookPrueba5';
-import HookPrueba6 from '../hooks/HookPrueba6';
-import HookPrueba7 from '../hooks/HookPrueba7';
+import HookUseState from '../hooks/HookUseState';
+import HookUseEffect from '../hooks/HookUseEffect';
+import HookUseContext from '../hooks/HookUseContext';
+import HookUseReducer from '../hooks/HookUseReducer';
+import HookUseMemo from '../hooks/HookUseMemo';
+import HookUseCallback from '../hooks/HookUseCallback';
+import HookUseLayoutEffect from '../hooks/HookUseLayoutEffect';
 import { jwtDecode } from 'jwt-decode';
-
 
 
 const usuario = localStorage.getItem('usuario');
@@ -130,13 +129,13 @@ function Solicitudes({ token, logout }) {
         </button>
       </div>
       
-      <HookPrueba1/>
-      <HookPrueba2/>
-      <HookPrueba3/>
-      <HookPrueba4/>
-      <HookPrueba5/>
-      <HookPrueba6/>
-      <HookPrueba7/>
+      <HookUseState/>
+      <HookUseEffect/>
+      <HookUseContext/>
+      <HookUseReducer/>
+      <HookUseMemo/>
+      <HookUseCallback/>
+      <HookUseLayoutEffect/>
     </div>
   );
 }

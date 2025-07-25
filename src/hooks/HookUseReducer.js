@@ -1,7 +1,12 @@
 import React, { useReducer, useState } from 'react';
-
 const initialState = [];
-
+/* 
+useReducer 
+Es una forma de organizar mejor los cambios de datos dentro de un componente.
+Sirve cuando tienes muchas acciones distintas que pueden cambiar algo en tu app 
+(por ejemplo: sumar, restar, resetear, etc.), 
+y quieres manejarlo todo de forma ordenada y clara.
+*/
 function reduce(state, action) {
     switch (action.type) {
         case 'agregar':
@@ -18,7 +23,7 @@ function reduce(state, action) {
 }
 
 // Componente
-function HookPrueba4() {
+function HookUseReducer() {
   const [tareas, dispatch] = useReducer(reduce, initialState);
   const [input, setInput] = useState('');
 
@@ -60,4 +65,4 @@ function HookPrueba4() {
     </div>
   );
 }
-export default HookPrueba4;
+export default HookUseReducer;

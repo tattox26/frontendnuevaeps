@@ -1,8 +1,12 @@
 import { useState, createContext } from 'react';
 import ChildrenPrueba from '../features/ChildrenPrueba.js';
-
+/* 
+createContext 
+Forma en la que React recuerda información mientras usas una aplicación.
+Sirve para guardar y cambiar valores que pueden ir variando, como un número, un texto, una lista, etc.
+*/
 export const UsuarioContext  = createContext();
-const HookPrueba3 = () => {
+const HookUseContext = () => {
     const [user, setUser] = useState({ name: 'Leonardo',email:'tattox26@hotmail.com' });
     return (
         <UsuarioContext.Provider value={{ user, setUser }}>
@@ -10,4 +14,4 @@ const HookPrueba3 = () => {
         </UsuarioContext.Provider>
     );
 };
-export default HookPrueba3;
+export default HookUseContext;

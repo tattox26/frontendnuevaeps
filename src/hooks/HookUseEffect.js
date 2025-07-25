@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
-function HookPrueba2() {
+/* 
+eEffect 
+Forma en la que React hace algo después de que la pantalla se muestra o cambia.
+Se usa para tareas como cargar datos, esperar algo, o hacer seguimiento de cambios.    
+*/
+function HookUseEffect() {
     // se debe indicar 
     useEffect(() => {
         //alert("useEffect");     
@@ -10,4 +15,4 @@ function HookPrueba2() {
         <div>HOOK 2 useEffect</div>
     )
 }
-export default HookPrueba2;
+export default HookUseEffect;

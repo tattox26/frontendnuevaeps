@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-function HookPrueba1() {
+/*  
+useState 
+Forma en la que React recuerda información mientras usas una aplicación.
+Sirve para guardar y cambiar valores que pueden ir variando, como un número, un texto, una lista, etc.
+*/
+function HookUseState() {
     const [cantidad, setCantidad] = useState(0);
     //const [error, seterror] = useState(0); 
     function handleClick(valor) {
@@ -25,4 +30,4 @@ function HookPrueba1() {
         </div> 
     )
 }
-export default HookPrueba1;
+export default HookUseState;

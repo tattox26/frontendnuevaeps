@@ -1,6 +1,10 @@
 import React, { useEffect,useState, useCallback } from 'react';
-
-function HookPrueba6() {
+/*  
+ !! useCallback !!
+  se ejecuta antes de que el navegador pinte la pantalla, es decir, 
+  justo después del renderizado, pero antes de que el usuario vea los cambios.
+*/
+function HookUseCallback() {
     const [contador, setContador] = useState(0);
 
     // Esta función está memorizada con useCallback
@@ -15,11 +19,11 @@ function HookPrueba6() {
 
     // Este efecto muestra si la función cambia
     useEffect(() => {
-        console.log('📌 función MEMORIZADA es NUEVA:', funcionMemorizada);
+        console.log('función MEMORIZADA es NUEVA:', funcionMemorizada);
     }, [funcionMemorizada]);
 
     useEffect(() => {
-        console.log('⚠️ función NORMAL es NUEVA:', funcionNormal);
+        console.log('función NORMAL es NUEVA:', funcionNormal);
     }, [funcionNormal]);
 
   return (
@@ -33,4 +37,4 @@ function HookPrueba6() {
   );
 }
 
-export default HookPrueba6;
+export default HookUseCallback;
