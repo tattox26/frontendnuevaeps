@@ -12,7 +12,7 @@ function HookUseEffect() {
     }, []);
 
     return (
-        <div>HOOK 2 useEffect</div>
+        <div>HOOK useEffect</div>
     )
 }
 export default HookUseEffect;
