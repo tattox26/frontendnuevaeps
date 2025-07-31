@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  backend:
+      build:
+        context: ./backendnuevaeps
+      container_name: "backendnuevaeps"      
+      ports:
+        - "5000:5000"
+      volumes:
+        - ./backendnuevaeps:/app
+      environment:
+        DB_HOST: mysql
+        DB_USER: root
+        DB_PORT: 3306
+        DB_PASSWORD: root
+        DB_NAME: nuevaeps
+       
+  frontend:
+      build:
+        context: ./frontendnuevaeps
+      container_name: "frontendnuevaeps"      
+      stdin_open: true
+      tty: true
+      command: sh -c "npm install && npm start"   
+      ports:
+        - "3000:3000"      
+      depends_on:
+          - backend
+
+  #nginx:
+    #image: nginx:alpine
+    #ports:
+    #  - "80:80"
+    #volumes:
+    #  - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    #  - ./frontendnuevaeps/build:/usr/share/nginx/html
+    #depends_on :
+    #  - backend
+    #  - frontend 
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nuevaeps
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./db.sql:/db.sql
+
+volumes:
+  dbdata:
+
+
